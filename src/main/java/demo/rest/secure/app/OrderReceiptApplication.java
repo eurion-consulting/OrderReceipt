@@ -1,4 +1,4 @@
-package demo.rest.secure.OrderReceipt;
+package demo.rest.secure.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
