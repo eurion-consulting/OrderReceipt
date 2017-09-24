@@ -1,4 +1,4 @@
-package demo.rest.secure.OrderReceipt;
+package demo.rest.boot.app;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

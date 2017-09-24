@@ -6,11 +6,11 @@ import java.util.List;
 
 public class Receipt {
 
-	private Operator operator;
+	private String operator;
 	private List<OrderItem> items;
 	
 	public Receipt() {
-		this.operator = new Operator("operator1");
+		this.operator = "operator1";
 		this.items = new ArrayList<OrderItem>();
 		
 		OrderItem item = new OrderItem();
@@ -24,7 +24,7 @@ public class Receipt {
 		return items;
 	}
 	
-	public Operator getOperator() {
+	public String getOperator() {
 		return operator;
 	}
 }

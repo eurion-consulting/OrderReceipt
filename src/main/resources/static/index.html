@@ -2,19 +2,39 @@
 <html>
 <head>
 	<title>Order Receipts Demo</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-route.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-route.min.js"></script> 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.js"></script>
+
+	<!-- JWT library for client side access and pass of JSON web tokens -->
+	<script type="text/javascript" src="https://cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js"></script> 
+	
 </head>
 
-<body ng-app="receipts">
+<body ng-app="receipts" data-ng-controller="pageController">
 	<div class="container">
     	
-    	<h1>Initial Version of the App</h1>
+    	<h1>Order Receipts</h1>
     	
   	</div>
   	
 </body>
+
+<script>
+var app = angular.module('receipts', ["ngResource", "ngCookies", "angular-jwt"]);
+ 
+app.controller('pageController', function($scope, $cookies, jwtHelper) {
+    
+    console.log('Page controller loaded..');
+	
+    function getToken(){
+        var token = $cookies.get("access_token");
+        var payload = jwtHelper.decodeToken(token);
+        console.log("Payload from JWT: " + payload)
+    }
+   
+});
+</script>
 
 </html>
