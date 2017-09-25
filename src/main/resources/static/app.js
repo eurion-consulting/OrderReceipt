@@ -8,8 +8,6 @@ app.controller('pageController', function(authService, receiptService, $scope, $
     for(cookie in _cookies){
     	console.log(cookie);
     }
-    
-    $scope.isAuditor = false;
 	
     $scope.getToken = function() {
         var token = $cookies.get("access_token");
