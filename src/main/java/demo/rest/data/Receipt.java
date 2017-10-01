@@ -17,7 +17,12 @@ public class Receipt {
 		item.setProduct(new Product("coffe", BigDecimal.valueOf(20)));
 		item.setQuantity(2);
 		
+		OrderItem item2 = new OrderItem();
+		item.setProduct(new Product("cream", BigDecimal.valueOf(4)));
+		item.setQuantity(20);
+		
 		this.items.add(item);
+		this.items.add(item2);
 	}
 	
 	public List<OrderItem> getItems(){
